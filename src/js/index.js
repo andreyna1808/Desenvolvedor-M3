@@ -1,6 +1,7 @@
 import { onViewMore } from "./components/onViewMore";
 import { htmlProduct } from "./components/productHtml";
 import { filters } from "./products/filters";
+import { selectSize } from "./products/selectSize";
 import { viewMoreColors } from "./products/viewMoreColors";
 
 const serverurl = process.env.SERVER_API;
@@ -21,6 +22,7 @@ fetch(`${serverurl}/products`)
     onViewMore(boxProduct, data);
     filters();
     viewMoreColors();
+    selectSize();
 
     console.log("data", data);
 
