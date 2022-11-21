@@ -1,0 +1,30 @@
+.box-sizes {
+  padding-left: 10rem;
+  margin-top: 2rem;
+  width: 40%;
+
+  h2 {
+    margin-bottom: 0.7rem;
+  }
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .sizes {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    border: 1px solid var(--gray-300);
+    cursor: pointer;
+  }
+
+  .sizes:hover {
+    border: 1px solid var(--cyan-500);
+  }
+}
