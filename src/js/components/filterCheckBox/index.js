@@ -1,8 +1,8 @@
-export const filterCheckBox = (dataDOM, type) => {
+export const filterCheckBox = (dataDOM) => {
   let checked = [];
 
-  return dataDOM.map((data, index) => {
-    return data.addEventListener("click", () => {
+  dataDOM.map((data, index) => {
+    data.addEventListener("click", () => {
       const isChecked = data.querySelector("input").getAttribute("value");
 
       if (data.querySelectorAll("input")[0].checked) {
@@ -11,11 +11,10 @@ export const filterCheckBox = (dataDOM, type) => {
         const removeChecked = checked?.filter(
           (dataChecked) => isChecked !== dataChecked
         );
-
         checked = removeChecked;
       }
-      console.log("checked", checked);
-      localStorage.setItem(type, JSON.stringify(checked));
     });
   });
+
+  return checked;
 };
