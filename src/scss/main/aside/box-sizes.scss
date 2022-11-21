@@ -24,6 +24,10 @@
     cursor: pointer;
   }
 
+  .select-size {
+    border: 1px solid var(--cyan-500) !important;
+  }
+
   .sizes:hover {
     border: 1px solid var(--cyan-500);
   }

@@ -1,19 +1,21 @@
 let textViewMore = document.querySelector(".box-colors .box-textColors");
 let moreColors = document.querySelector(".box-colors .box-moreColors");
 
-export const viewMoreColors = async () => {
-  console.log("viewMoreColors", textViewMore);
-  console.log("moreColors", moreColors);
+const basicText = "Ver todas as cores";
 
+/* TODO arrumar essa função para ficar completa o ver mais e ver menos */
+export const viewMoreColors = () => {
   textViewMore.addEventListener("click", () => {
     if (
-      textViewMore.querySelector(".textAllColors").textContent ===
-      "Ver todas as cores"
+      textViewMore.querySelector(".textAllColors")?.textContent === basicText
     ) {
-      textViewMore.innerHTML = "";
-      textViewMore.style.display = "none";
+      textViewMore.innerHTML = "Ver menos";
       moreColors.classList.add("view-colors");
-      moreColors.style.display = "none";
-    }
+      console.log("test", textViewMore);
+    } /* else {
+      textViewMore.innerHTML = basicText;
+      moreColors.classList.remove("view-colors");
+      console.log("textViewMore", textViewMore);
+    } */
   });
 };
