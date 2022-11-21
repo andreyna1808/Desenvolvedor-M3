@@ -1,15 +1,11 @@
 import { filterCheckBox } from "./components/filterCheckBox";
 import { onViewMore } from "./components/onViewMore";
 import { htmlProduct } from "./components/productHtml";
-import { Cart } from "./header/cart";
 import { selectSize } from "./products/selectSize";
 import { viewMoreColors } from "./products/viewMoreColors";
 
 const serverurl = process.env.SERVER_API;
 
-console.log("Dev m3", serverurl);
-
-//Criando o saiba mais
 let boxProduct = document.querySelector(".box-products .products");
 let qtdProductsToCart = document.querySelector("header section p");
 let boxPrices = Array.from(document.querySelectorAll(".box-prices li"));
@@ -45,6 +41,8 @@ fetch(`${serverurl}/products`)
     });
 
     Cart(cartProducts);
+
+    //console.log('data', data)
   })
   .catch((err) => {
     console.warn("Something went wrong.", err);
