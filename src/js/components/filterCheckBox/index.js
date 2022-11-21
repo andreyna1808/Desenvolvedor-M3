@@ -15,7 +15,7 @@ export const filterCheckBox = (dataDOM, type) => {
         checked = removeChecked;
       }
       console.log("checked", checked);
-      window.localStorage.setItem(type, JSON.stringify(checked));
+      localStorage.setItem(type, JSON.stringify(checked));
     });
   });
 };

@@ -16,7 +16,7 @@ export const selectSize = () => {
         arraySizes.push(data.textContent);
         data.classList.add("select-size");
       }
-      window.localStorage.setItem("sizes", JSON.stringify(arraySizes));
+      localStorage.setItem("sizes", JSON.stringify(arraySizes));
     });
   });
 };
