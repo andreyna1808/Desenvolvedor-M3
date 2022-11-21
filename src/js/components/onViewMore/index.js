@@ -3,7 +3,6 @@ import { htmlProduct } from "../productHtml";
 let viewMore = document.querySelector(".box-products .box-button button");
 
 export const onViewMore = async (boxProduct, dataProducts) => {
-  console.log("viewMore", viewMore.textContent);
   viewMore.addEventListener("click", () => {
     if (viewMore.textContent === "Ver mais") {
       dataProducts.slice(10, dataProducts.length).map((val, index) => {

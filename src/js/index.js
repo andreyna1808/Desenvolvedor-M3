@@ -1,5 +1,7 @@
 import { onViewMore } from "./components/onViewMore";
 import { htmlProduct } from "./components/productHtml";
+import { filters } from "./products/filters";
+import { viewMoreColors } from "./products/viewMoreColors";
 
 const serverurl = process.env.SERVER_API;
 
@@ -17,6 +19,10 @@ fetch(`${serverurl}/products`)
     basicProducts.push(data.slice(0, 9));
 
     onViewMore(boxProduct, data);
+    filters();
+    viewMoreColors();
+
+    console.log("data", data);
 
     basicProducts[0].map((val, index) => {
       boxProduct.innerHTML += `${htmlProduct(val, index)}`;
