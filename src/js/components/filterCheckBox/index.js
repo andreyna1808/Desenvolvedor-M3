@@ -1,9 +1,7 @@
-let boxColors = Array.from(document.querySelectorAll(".box-colors li"));
-
-export const filters = () => {
+export const filterCheckBox = (dataDOM, type) => {
   let checked = [];
 
-  return boxColors.map((data, index) => {
+  return dataDOM.map((data, index) => {
     return data.addEventListener("click", () => {
       const isChecked = data.querySelector("input").getAttribute("value");
 
@@ -17,7 +15,7 @@ export const filters = () => {
         checked = removeChecked;
       }
       console.log("checked", checked);
-      window.localStorage.setItem("colors", JSON.stringify(checked));
+      window.localStorage.setItem(type, JSON.stringify(checked));
     });
   });
 };

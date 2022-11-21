@@ -1,6 +1,6 @@
+import { filterCheckBox } from "./components/filterCheckBox";
 import { onViewMore } from "./components/onViewMore";
 import { htmlProduct } from "./components/productHtml";
-import { filters } from "./products/filters";
 import { selectSize } from "./products/selectSize";
 import { viewMoreColors } from "./products/viewMoreColors";
 
@@ -10,6 +10,8 @@ console.log("Dev m3", serverurl);
 
 //Criando o saiba mais
 let boxProduct = document.querySelector(".box-products .products");
+let boxPrices = Array.from(document.querySelectorAll(".box-prices li"));
+let boxColors = Array.from(document.querySelectorAll(".box-colors li"));
 
 fetch(`${serverurl}/products`)
   .then((response) => {
@@ -20,9 +22,10 @@ fetch(`${serverurl}/products`)
     basicProducts.push(data.slice(0, 9));
 
     onViewMore(boxProduct, data);
-    filters();
     viewMoreColors();
     selectSize();
+    filterCheckBox(boxPrices, "prices");
+    filterCheckBox(boxColors, "colors");
 
     console.log("data", data);
 
