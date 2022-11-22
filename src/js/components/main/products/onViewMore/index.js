@@ -1,25 +1,25 @@
 import { htmlProduct } from "../../../htmls/box-products";
 
-let viewMore = document.querySelector(".box-products .box-button button");
+export const onViewMore = (boxProduct, dataProducts, buttonMore) => {
+  let arrayProducts = [];
+  if (buttonMore.textContent === "Ver mais") {
+    arrayProducts = dataProducts;
+    dataProducts.slice(10, dataProducts.length).map((val, index) => {
+      boxProduct.innerHTML += `${htmlProduct(val, index)}`;
+    });
 
-export const onViewMore = async (boxProduct, dataProducts) => {
-  viewMore.addEventListener("click", () => {
-    if (viewMore.textContent === "Ver mais") {
-      dataProducts.slice(10, dataProducts.length).map((val, index) => {
-        boxProduct.innerHTML += `${htmlProduct(val, index)}`;
-      });
+    buttonMore.classList.add("view-less");
+    buttonMore.innerHTML = "Ver menos";
+  } else {
+    boxProduct.innerHTML = ``;
+    arrayProducts = dataProducts.slice(0, 9);
+    dataProducts.slice(0, 9).map((val, index) => {
+      boxProduct.innerHTML += `${htmlProduct(val, index)}`;
+    });
 
-      viewMore.classList.add("view-less");
-      viewMore.innerHTML = "Ver menos";
-    } else {
-      boxProduct.innerHTML = ``;
-      dataProducts.slice(0, 9).map((val, index) => {
-        boxProduct.innerHTML += `${htmlProduct(val, index)}`;
-      });
-
-      viewMore.classList.add("view-more");
-      viewMore.classList.remove("view-less");
-      viewMore.innerHTML = "Ver mais";
-    }
-  });
+    buttonMore.classList.add("view-more");
+    buttonMore.classList.remove("view-less");
+    buttonMore.innerHTML = "Ver mais";
+  }
+  return arrayProducts;
 };

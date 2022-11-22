@@ -1,5 +1,6 @@
 import { buyProduct } from "./components/header/buyProduct";
 import { htmlColorPrice } from "./components/htmls/box-colorPrice";
+import { htmlSelectOrder } from "./components/htmls/box-content";
 import { htmlProduct } from "./components/htmls/box-products";
 import { htmlSize } from "./components/htmls/box-sizes";
 import { filterColorPrice } from "./components/main/aside/filterColorPrice";
@@ -19,18 +20,24 @@ let boxProduct = document.querySelector(".box-products .products");
 let boxPrices = document.querySelector(".box-prices .prices");
 let boxColors = document.querySelector(".box-colors .colors");
 let boxSizes = document.querySelector(".box-sizes .sizes");
+let boxOrders = document.querySelector(".box-content select");
+
+let qtdProductsToCart = document.querySelector("header section p");
+let buttonMore = document.querySelector(".box-products .box-button button");
 
 fetch(`${serverurl}/products`)
   .then((response) => response.json())
-  .then((data) => App(data));
+  .then((data) => {
+    App(data);
+  });
 
-const App = (products) => {
+const App = (productsM3) => {
   const dataColor = colorsJson;
   const dataPrice = pricesJson;
   const dataSize = sizesJson;
   const dataOder = ordersJson;
 
-  products.slice(0, 9).map((val, index) => {
+  productsM3.slice(0, 9).map((val, index) => {
     boxProduct.innerHTML += `${htmlProduct(val, index)}`;
   });
 
@@ -46,13 +53,16 @@ const App = (products) => {
     boxSizes.innerHTML += `${htmlSize(val, index)}`;
   });
 
-  /*   dataOder.map((val, index) => {
-    boxPrices.innerHTML += `${htmlColorPrice(val, index)}`;
-  }); */
+  dataOder.map((val, index) => {
+    boxOrders.innerHTML += `${htmlSelectOrder(val, index)}`;
+  });
 
-  onViewMore(boxProduct, products);
+  buttonMore.addEventListener("click", () => {
+    onViewMore(boxProduct, productsM3, buttonMore);
+    buyProduct();
+  });
+
   viewMoreColors(boxColors, dataColor);
-
   buyProduct();
 
   filterColorPrice(boxPrices);
