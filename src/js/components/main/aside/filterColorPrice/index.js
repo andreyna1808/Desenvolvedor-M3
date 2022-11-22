@@ -1,7 +1,7 @@
-export const filterCheckBox = (dataDOM) => {
+export const filterColorPrice = (dataDOM) => {
   let checked = [];
 
-  dataDOM.map((data, index) => {
+  dataDOM.map((data) => {
     data.addEventListener("click", () => {
       const isChecked = data.querySelector("input").getAttribute("value");
 
@@ -15,6 +15,5 @@ export const filterCheckBox = (dataDOM) => {
       }
     });
   });
-
   return checked;
 };

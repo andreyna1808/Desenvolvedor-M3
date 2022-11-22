@@ -1,4 +1,4 @@
-import { htmlProduct } from "../productHtml";
+import { htmlProduct } from "../../../htmls/box-products";
 
 let viewMore = document.querySelector(".box-products .box-button button");
 
