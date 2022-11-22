@@ -1,0 +1,81 @@
+[{
+    "id": "1",
+    "name": "Amarelo",
+    "for": "Amarelo",
+    "value": "Amarelo",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "2",
+    "name": "Azul",
+    "for": "Azul",
+    "value": "Azul",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "3",
+    "name": "Branco",
+    "for": "Branco",
+    "value": "Branco",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "4",
+    "name": "Cinza",
+    "for": "Cinza",
+    "value": "Cinza",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "5",
+    "name": "Laranja",
+    "for": "Laranja",
+    "value": "Laranja",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "4",
+    "name": "Verde",
+    "for": "Verde",
+    "value": "Verde",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "4",
+    "name": "Vermelho",
+    "for": "Vermelho",
+    "value": "Vermelho",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "4",
+    "name": "Preto",
+    "for": "Preto",
+    "value": "Preto",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "4",
+    "name": "Rosa",
+    "for": "Rosa",
+    "value": "Rosa",
+    "class": "checkbox-color",
+    "checked": null
+  },
+  {
+    "id": "4",
+    "name": "Vinho",
+    "for": "Vinho",
+    "value": "Vinho",
+    "class": "checkbox-color",
+    "checked": null
+  }
+]

@@ -1,0 +1,51 @@
+[{
+    "id": "1",
+    "min": "P",
+    "max": "50",
+    "name": "de R$0 até R$50",
+    "value": "0,50",
+    "class": "price-checkbox",
+    "for": "price-one",
+    "checked": null
+  },
+  {
+    "id": "2",
+    "min": "51",
+    "max": "150",
+    "name": "de R$51 até R$150",
+    "value": "51,150",
+    "class": "price-checkbox",
+    "for": "price-two",
+    "checked": null
+  },
+  {
+    "id": "3",
+    "min": "151",
+    "max": "300",
+    "name": "de R$151 até R$300",
+    "value": "151,300",
+    "class": "price-checkbox",
+    "for": "price-three",
+    "checked": null
+  },
+  {
+    "id": "4",
+    "min": "301",
+    "max": "500",
+    "name": "de R$301 até R$500",
+    "value": "301,500",
+    "class": "price-checkbox",
+    "for": "price-four",
+    "checked": null
+  },
+  {
+    "id": "5",
+    "min": "501",
+    "max": "999999999999999",
+    "name": "a partir R$501",
+    "value": "501",
+    "class": "price-checkbox",
+    "for": "price-five",
+    "checked": null
+  }
+]

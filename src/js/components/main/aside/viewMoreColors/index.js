@@ -1,17 +1,27 @@
+import { htmlColorPrice } from "../../../htmls/box-colorPrice";
+
 let textViewMore = document.querySelector(".box-colors .box-textColors");
-let moreColors = document.querySelector(".box-colors .box-moreColors");
 
 const basicText = "Ver todas as cores v";
 
-export const viewMoreColors = () => {
+export const viewMoreColors = (boxColors, dataColor) => {
   textViewMore.innerHTML = basicText;
   textViewMore.addEventListener("click", () => {
     if (textViewMore.textContent === basicText) {
+      dataColor.slice(5, dataColor.length).map((val, index) => {
+        boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
+      });
+
       textViewMore.innerHTML = "Ver menos ∧";
-      return moreColors.classList.add("view-colors");
+      textViewMore.classList.add("view-colors");
     } else {
+      boxColors.innerHTML = ``;
+      dataColor.slice(0, 5).map((val, index) => {
+        boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
+      });
+
       textViewMore.innerHTML = basicText;
-      moreColors.classList.remove("view-colors");
+      textViewMore.classList.remove("view-colors");
     }
   });
 };

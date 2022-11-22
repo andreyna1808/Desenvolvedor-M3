@@ -12,7 +12,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .sizes {
+  .size {
     width: 2rem;
     height: 2rem;
     margin: 0.2rem;
@@ -28,7 +28,7 @@
     border: 1px solid var(--cyan-500) !important;
   }
 
-  .sizes:hover {
+  .size:hover {
     border: 1px solid var(--cyan-500);
   }
 }

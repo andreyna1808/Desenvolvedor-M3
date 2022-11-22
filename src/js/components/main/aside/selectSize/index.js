@@ -1,9 +1,9 @@
-let boxSizes = Array.from(document.querySelectorAll(".box-sizes option"));
-
-export const selectSize = () => {
+export const selectSize = (dataDOM) => {
   let arraySizes = [];
 
-  boxSizes.map((data) => {
+  //console.log("Aqqq", dataDOM);
+
+  /*   dataDOM.map((data) => {
     data.addEventListener("click", () => {
       const isHave = arraySizes.filter((size) => data.textContent === size);
       if (isHave.length >= 1) {
@@ -17,6 +17,6 @@ export const selectSize = () => {
         data.classList.add("select-size");
       }
     });
-  });
+  }); */
   return arraySizes;
 };

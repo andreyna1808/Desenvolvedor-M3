@@ -7,7 +7,7 @@ export const htmlColorPrice = (val, index) => {
           value="${val.value}"
           ${val.checked}
         />
-        <label for="${val.name}">${val.name}</label>
+        <label for="${val.for}">${val.name}</label>
       </li>
   `;
 };

@@ -27,9 +27,6 @@
     <select>
       <!-- TODO Depois tentar estilizar esse layout -->
       <option value="" disabled hidden selected>Ordenar por:</option>
-      <option value="recents">Mais recentes</option>
-      <option value="less">Menor preço</option>
-      <option value="more">Maior preço</option>
     </select>
   </section>
 
@@ -37,59 +34,7 @@
     <aside>
       <section class="box-colors">
         <h2>Cores</h2>
-        <ul>
-          <li>
-            <input type="checkbox" id="yellow" name="yellow" class="checkbox-color" value="amarelo" />
-            <label for="yellow">Amarelo</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="blue" name="blue" class="checkbox-color" value="azul">
-            <label for="blue">Azul</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="white" name="white" class="checkbox-color" value="branco">
-            <label for="white">Branco</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="grey" name="grey" class="checkbox-color" value="cinza">
-            <label for="grey">Cinza</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="orange" name="orange" class="checkbox-color" value="laranja">
-            <label for="orange">Laranja</label>
-          </li>
-        </ul>
-
-        <ul class="box-moreColors">
-          <li>
-            <input type="checkbox" id="green" name="green" class="checkbox-color" value="verde">
-            <label for="green">Verde</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="red" name="red" class="checkbox-color" value="vermelho">
-            <label for="red">Vermelho</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="black" name="black" class="checkbox-color" value="preto">
-            <label for="black">Preto</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="pink" name="pink" class="checkbox-color" value="rosa">
-            <label for="pink">Rosa</label>
-          </li>
-
-          <li>
-            <input type="checkbox" id="wine" name="wine" class="checkbox-color" value="vinho">
-            <label for="wine">Vinho</label>
-          </li>
-        </ul>
+        <ul class="colors"></ul>
 
         <div class="box-textColors">
           <p class="textAllColors">Ver todas as cores v</p>
@@ -100,51 +45,15 @@
       <section class="box-sizes">
         <h2>Tamanhos</h2>
 
-        <div>
-          <option>P</option>
-          <option>M</option>
-          <option>G</option>
-          <option>GG</option>
-          <option>U</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-          <option>42</option>
-          <option>44</option>
-          <option>46</option>
-        </div>
+        <!-- TODO criar uma div e inputar as options e coloca a classe de ativo-->
+        <div class="sizes"></div>
 
       </section>
 
       <section class="box-prices">
         <h2>Faixa de preço</h2>
 
-        <ul>
-          <li>
-            <input type="checkbox" value="0,50" name="price-one" class="price-checkbox">
-            <label for="price-one">de R$0 até R$50</label>
-          </li>
-
-          <li>
-            <input type="checkbox" value="51,150" name="price-two" class="price-checkbox">
-            <label for="price-two">de R$51 até R$150</label>
-          </li>
-
-          <li>
-            <input type="checkbox" value="151,300" name="price-three" class="price-checkbox">
-            <label for="price-three">de R$151 até R$300</label>
-          </li>
-
-          <li>
-            <input type="checkbox" value="301,500" name="price-four" class="price-checkbox">
-            <label for="price-four">de R$301 até R$500</label>
-          </li>
-
-          <li>
-            <input type="checkbox" value="501" name="price-five" class="price-checkbox">
-            <label for="price-five">a partir R$501</label>
-          </li>
-        </ul>
+        <ul class="prices"></ul>
       </section>
     </aside>
 

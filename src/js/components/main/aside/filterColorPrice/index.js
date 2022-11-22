@@ -1,10 +1,10 @@
 export const filterColorPrice = (dataDOM) => {
+  let dom = Array.from(dataDOM.querySelectorAll("li"));
   let checked = [];
 
-  dataDOM.map((data) => {
+  dom.map((data) => {
     data.addEventListener("click", () => {
       const isChecked = data.querySelector("input").getAttribute("value");
-
       if (data.querySelectorAll("input")[0].checked) {
         checked.push(isChecked);
       } else {
