@@ -41,22 +41,24 @@ export const filterProducts = async () => {
 
     getAllProducts.filter((product) => {
       const hasColor = colors.includes(product.color.toLowerCase());
+      const hasSize = product.size
+        .map((size) => sizes.includes(size))
+        .join()
+        .includes(true);
 
-      console.log("hasColor", hasColor);
+      console.log("hasSize", hasSize);
 
       if (
-        hasColor === true &&
+        hasColor &&
+        hasSize &&
         product.price <= prices[prices.length - 1] &&
         product.price > prices[0]
       ) {
-        console.log("entreiii", product);
         allProduct.push(product);
-        return product;
       } else {
-        allProduct.push(product);
+        console.log("não entrei");
       }
     });
-    console.log("allProduct", allProduct);
 
     return allProduct;
   };
