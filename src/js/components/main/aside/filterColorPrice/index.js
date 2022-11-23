@@ -21,7 +21,6 @@ export const filterColorPrice = (dataDOM, productsM3, type, json) => {
           if (data.name === isChecked || data.value === isChecked) {
             return (data.checked = null);
           }
-          //console.log("dataaaa all", data);
           return data;
         });
         checked = json;
