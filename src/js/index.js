@@ -1,3 +1,4 @@
+import { filterProducts } from "./components/filterProducts";
 import { buyProduct } from "./components/header/buyProduct";
 import { htmlColorPrice } from "./components/htmls/box-colorPrice";
 import { htmlSelectOrder } from "./components/htmls/box-content";
@@ -20,8 +21,6 @@ let boxPrices = document.querySelector(".box-prices .prices");
 let boxColors = document.querySelector(".box-colors .colors");
 let boxSizes = document.querySelector(".box-sizes .sizes");
 let boxOrders = document.querySelector(".box-content select");
-
-let qtdProductsToCart = document.querySelector("header section p");
 let buttonMore = document.querySelector(".box-products .box-button button");
 
 fetch(`${serverurl}/products`)
@@ -70,4 +69,6 @@ const App = (productsM3) => {
 
   selectSize(dataSize);
   sectionOrder(dataOder);
+
+  filterProducts();
 };
