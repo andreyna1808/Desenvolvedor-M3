@@ -1,17 +1,19 @@
 import { htmlColorPrice } from "../../../htmls/box-colorPrice";
+import { eventListColorPrice } from "../filterColorPrice/eventListener";
 
 let textViewMore = document.querySelector(".box-colors .box-textColors");
+let boxColors = document.querySelector(".box-colors .colors");
 
-export const viewMoreColors = (dataColor) => {
-  let boxColors = document.querySelector(".box-colors .colors");
-
+export const viewMoreColors = (dataColor, dom) => {
   const basicText = "Ver todas as cores v";
   const isChecked = JSON.parse(localStorage.getItem("colors")) || dataColor;
 
   if (textViewMore.textContent === basicText) {
-    isChecked.slice(5, isChecked.length).map((val, index) => {
+    boxColors.innerHTML = ``;
+    isChecked.map((val, index) => {
       boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
     });
+
     textViewMore.innerHTML = "Ver menos ∧";
     textViewMore.classList.add("view-colors");
   } else {
@@ -23,5 +25,6 @@ export const viewMoreColors = (dataColor) => {
     textViewMore.innerHTML = basicText;
     textViewMore.classList.remove("view-colors");
   }
-  return boxColors;
+  const domColors = Array.from(boxColors.querySelectorAll("li"));
+  eventListColorPrice(domColors, dataColor, "colors");
 };

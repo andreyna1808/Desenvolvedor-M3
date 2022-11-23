@@ -1,3 +1,5 @@
+let boxColors = document.querySelector(".box-colors .colors");
+
 export const eventListColorPrice = (dom, json, type) => {
   let checked = JSON.parse(localStorage.getItem(type)) || json;
 
@@ -13,6 +15,7 @@ export const eventListColorPrice = (dom, json, type) => {
         });
         checked = json;
         localStorage.setItem(type, JSON.stringify(checked));
+        console.log("list dom if", boxColors);
       } else {
         json.filter((data) => {
           if (data.name === isChecked || data.value === isChecked) {
@@ -22,6 +25,7 @@ export const eventListColorPrice = (dom, json, type) => {
         });
         checked = json;
         localStorage.setItem(type, JSON.stringify(checked));
+        console.log("list dom else", boxColors);
       }
     });
   });
