@@ -16,6 +16,6 @@ export const buyProduct = () => {
 
   removeProduct.addEventListener("click", () => {
     qtdProductsToCart.innerHTML = 0;
-    localStorage.removeItem("cart");
+    localStorage.setItem("cart", JSON.stringify([]));
   });
 };

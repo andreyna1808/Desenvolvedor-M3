@@ -45,10 +45,6 @@ const App = (productsM3) => {
     boxPrices.innerHTML += `${htmlColorPrice(val, index)}`;
   });
 
-  dataColor.slice(0, 5).map((val, index) => {
-    boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
-  });
-
   dataSize.map((val, index) => {
     boxSizes.innerHTML += `${htmlSize(val, index)}`;
   });
@@ -65,8 +61,8 @@ const App = (productsM3) => {
   viewMoreColors(boxColors, dataColor);
   buyProduct();
 
-  filterColorPrice(boxPrices);
-  filterColorPrice(boxColors);
+  filterColorPrice(boxPrices, productsM3, "prices", dataPrice);
+  filterColorPrice(boxColors, productsM3, "colors", dataColor);
   selectSize(boxSizes);
   sectionOrder();
 };

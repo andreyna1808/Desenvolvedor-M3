@@ -2,13 +2,19 @@ import { htmlColorPrice } from "../../../htmls/box-colorPrice";
 
 let textViewMore = document.querySelector(".box-colors .box-textColors");
 
-const basicText = "Ver todas as cores v";
-
 export const viewMoreColors = (boxColors, dataColor) => {
+  const basicText = "Ver todas as cores v";
+  let isChecked = JSON.parse(localStorage.getItem("colors")) || dataColor;
+
+  boxColors.innerHTML = ``;
+  isChecked.slice(0, 5).map((val, index) => {
+    boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
+  });
+
   textViewMore.innerHTML = basicText;
   textViewMore.addEventListener("click", () => {
     if (textViewMore.textContent === basicText) {
-      dataColor.slice(5, dataColor.length).map((val, index) => {
+      isChecked.slice(5, isChecked.length).map((val, index) => {
         boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
       });
 
@@ -16,7 +22,7 @@ export const viewMoreColors = (boxColors, dataColor) => {
       textViewMore.classList.add("view-colors");
     } else {
       boxColors.innerHTML = ``;
-      dataColor.slice(0, 5).map((val, index) => {
+      isChecked.slice(0, 5).map((val, index) => {
         boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
       });
 
