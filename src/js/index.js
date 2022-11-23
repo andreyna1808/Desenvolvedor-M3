@@ -31,11 +31,12 @@ fetch(`${serverurl}/products`)
   });
 
 const App = (productsM3) => {
-  const dataOder = ordersJson;
+  const resetOrder = localStorage.setItem("order", JSON.stringify(ordersJson));
 
   const dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
   const dataPrice = JSON.parse(localStorage.getItem("prices")) || pricesJson;
   const dataSize = JSON.parse(localStorage.getItem("sizes")) || sizesJson;
+  const dataOder = JSON.parse(localStorage.getItem("order")) || ordersJson;
 
   productsM3.slice(0, 9).map((val, index) => {
     boxProduct.innerHTML += `${htmlProduct(val, index)}`;
@@ -68,5 +69,5 @@ const App = (productsM3) => {
   filterColorPrice(boxColors, productsM3, "colors", dataColor);
 
   selectSize(dataSize);
-  sectionOrder();
+  sectionOrder(dataOder);
 };

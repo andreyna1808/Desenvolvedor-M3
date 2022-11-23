@@ -1,16 +1,25 @@
 [{
     "id": "1",
     "name": "Mais recentes",
+    "selected": "",
     "value": "recents"
   },
   {
     "id": "2",
     "name": "Menor preço",
+    "selected": "",
     "value": "less"
   },
   {
     "id": "3",
     "name": "Maior preço",
+    "selected": "",
     "value": "more"
+  },
+  {
+    "id": "4",
+    "name": "Nenhuma opção",
+    "selected": "",
+    "value": "none"
   }
 ]
