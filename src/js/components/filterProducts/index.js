@@ -36,26 +36,30 @@ export const filterProducts = async () => {
   console.log("fui order", orders);
   console.log("aqqq", getAllProducts);
 
-  const teste = getAllProducts.filter((product) => {
-    // fui colors ['amarelo', 'branco']
-    const filterColors = colors.map((color) => {
-      if (color.includes(product.color.toLowerCase())) {
-        console.log("Heeeeeeee", product.color.toLowerCase());
+  const filterProducts = () => {
+    const allProduct = [];
+
+    getAllProducts.filter((product) => {
+      const hasColor = colors.includes(product.color.toLowerCase());
+
+      console.log("hasColor", hasColor);
+
+      if (
+        hasColor === true &&
+        product.price <= prices[prices.length - 1] &&
+        product.price > prices[0]
+      ) {
+        console.log("entreiii", product);
+        allProduct.push(product);
         return product;
+      } else {
+        allProduct.push(product);
       }
-      return product;
     });
+    console.log("allProduct", allProduct);
 
-    console.log("filterColors", filterColors);
+    return allProduct;
+  };
 
-    if (
-      product.price <= prices[prices.length - 1] &&
-      product.price > prices[0]
-    ) {
-      return colors.includes(product.color.toLowerCase());
-    }
-    return product;
-  });
-
-  console.log("here", teste);
+  console.log("here", filterProducts());
 };
