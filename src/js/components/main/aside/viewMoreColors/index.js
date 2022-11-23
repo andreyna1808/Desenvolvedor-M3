@@ -4,7 +4,7 @@ import { eventListColorPrice } from "../filterColorPrice/eventListener";
 let textViewMore = document.querySelector(".box-colors .box-textColors");
 let boxColors = document.querySelector(".box-colors .colors");
 
-export const viewMoreColors = (dataColor, dom) => {
+export const viewMoreColors = (dataColor, productM3) => {
   const basicText = "Ver todas as cores v";
   const isChecked = JSON.parse(localStorage.getItem("colors")) || dataColor;
 
@@ -26,5 +26,5 @@ export const viewMoreColors = (dataColor, dom) => {
     textViewMore.classList.remove("view-colors");
   }
   const domColors = Array.from(boxColors.querySelectorAll("li"));
-  eventListColorPrice(domColors, dataColor, "colors");
+  eventListColorPrice(domColors, dataColor, "colors", productM3);
 };

@@ -1,4 +1,3 @@
-import { filterProducts } from "./components/filterProducts";
 import { buyProduct } from "./components/header/buyProduct";
 import { htmlColorPrice } from "./components/htmls/box-colorPrice";
 import { htmlSelectOrder } from "./components/htmls/box-content";
@@ -64,11 +63,13 @@ const App = (productsM3) => {
 
   buyProduct();
 
-  filterColorPrice(boxPrices, productsM3, "prices", dataPrice);
-  filterColorPrice(boxColors, productsM3, "colors", dataColor);
+  filterColorPrice(boxPrices, "prices", dataPrice, productsM3);
+  filterColorPrice(boxColors, "colors", dataColor, productsM3);
 
   selectSize(dataSize);
+
+  //TODO order
   sectionOrder(dataOder);
 
-  filterProducts();
+  //filterProducts(productsM3);
 };
