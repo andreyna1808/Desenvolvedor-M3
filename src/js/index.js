@@ -32,11 +32,11 @@ fetch(`${serverurl}/products`)
   });
 
 const App = (productsM3) => {
-  const dataSize = sizesJson;
   const dataOder = ordersJson;
 
   const dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
   const dataPrice = JSON.parse(localStorage.getItem("prices")) || pricesJson;
+  const dataSize = JSON.parse(localStorage.getItem("sizes")) || sizesJson;
 
   productsM3.slice(0, 9).map((val, index) => {
     boxProduct.innerHTML += `${htmlProduct(val, index)}`;
@@ -68,6 +68,7 @@ const App = (productsM3) => {
 
   filterColorPrice(boxPrices, productsM3, "prices", dataPrice);
   filterColorPrice(boxColors, productsM3, "colors", dataColor);
-  selectSize(boxSizes);
+
+  selectSize(dataSize);
   sectionOrder();
 };

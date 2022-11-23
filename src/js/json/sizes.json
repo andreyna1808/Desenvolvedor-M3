@@ -1,45 +1,56 @@
 [{
     "id": "1",
+    "class": "",
     "type": "P"
   },
   {
     "id": "2",
+    "class": "",
     "type": "M"
   },
   {
     "id": "3",
+    "class": "",
     "type": "G"
   },
   {
     "id": "4",
+    "class": "",
     "type": "GG"
   },
   {
     "id": "5",
+    "class": "",
     "type": "U"
   },
   {
     "id": "6",
+    "class": "",
     "type": "36"
   },
   {
     "id": "7",
+    "class": "",
     "type": "38"
   },
   {
     "id": "8",
+    "class": "",
     "type": "40"
   },
   {
     "id": "9",
+    "class": "",
     "type": "42"
   },
   {
     "id": "10",
+    "class": "",
     "type": "44"
   },
   {
     "id": "11",
+    "class": "",
     "type": "46"
   }
 ]

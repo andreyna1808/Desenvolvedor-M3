@@ -1,22 +1,36 @@
-export const selectSize = (dataDOM) => {
-  let arraySizes = [];
+export const selectSize = (json) => {
+  let boxSizes = Array.from(
+    document.querySelectorAll(".box-sizes .sizes .size")
+  );
 
-  //console.log("Aqqq", dataDOM);
+  let checked = JSON.parse(localStorage.getItem("sizes")) || json;
 
-  /*   dataDOM.map((data) => {
+  boxSizes.map((data) => {
     data.addEventListener("click", () => {
-      const isHave = arraySizes.filter((size) => data.textContent === size);
+      const isHave = checked.filter(
+        (size) => data.textContent === size.type && size.class
+      );
       if (isHave.length >= 1) {
+        json.filter((jsonData) => {
+          if (jsonData.type === data.textContent) {
+            return (jsonData.class = "");
+          }
+          return data;
+        });
+        checked = json;
+        localStorage.setItem("sizes", JSON.stringify(checked));
         data.classList.remove("select-size");
-        const removeDataToSize = arraySizes.filter(
-          (sizes) => data.textContent !== sizes
-        );
-        arraySizes = removeDataToSize;
       } else {
-        arraySizes.push(data.textContent);
+        json.filter((jsonData) => {
+          if (jsonData.type === data.textContent) {
+            return (jsonData.class = "select-size");
+          }
+          return data;
+        });
+        checked = json;
+        localStorage.setItem("sizes", JSON.stringify(checked));
         data.classList.add("select-size");
       }
     });
-  }); */
-  return arraySizes;
+  });
 };
