@@ -10,8 +10,9 @@ export const sectionOrder = (dataOder) => {
       dataOder.filter((oderData) => {
         if (oderData.name === selected) {
           return (oderData.selected = "selected");
+        } else {
+          return (oderData.selected = "");
         }
-        return data;
       });
       localStorage.setItem("order", JSON.stringify(dataOder));
     });
