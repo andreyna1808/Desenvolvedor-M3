@@ -5,7 +5,6 @@ import { htmlProduct } from "./components/htmls/box-products";
 import { htmlSize } from "./components/htmls/box-sizes";
 import { filterColorPrice } from "./components/main/aside/filterColorPrice";
 import { selectSize } from "./components/main/aside/selectSize";
-import { viewMoreColors } from "./components/main/aside/viewMoreColors";
 import { onViewMore } from "./components/main/products/onViewMore";
 import { sectionOrder } from "./components/sectionOrder";
 
@@ -63,7 +62,6 @@ const App = (productsM3) => {
     buyProduct();
   });
 
-  viewMoreColors(boxColors, dataColor);
   buyProduct();
 
   filterColorPrice(boxPrices, productsM3, "prices", dataPrice);
