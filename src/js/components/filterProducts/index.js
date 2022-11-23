@@ -2,6 +2,9 @@ import colorsJson from "../../json/colors.json";
 import pricesJson from "../../json/prices.json";
 import ordersJson from "../../json/selectOrder.json";
 import sizesJson from "../../json/sizes.json";
+import { filterAll } from "./filterAll";
+import { oneFilterSelect } from "./oneFilters";
+import { twoFiltersSelect } from "./twoFilters";
 
 const serverurl = process.env.SERVER_API;
 
@@ -20,9 +23,12 @@ export const filterProducts = async () => {
   const colors = dataColor
     .filter((color) => color.checked === "checked")
     .map((color) => color.name.toLowerCase());
-  const prices = dataPrice
+  const pricesMax = dataPrice
     .filter((price) => price.checked === "checked")
     .map((price) => Number(price.max));
+  const pricesMin = dataPrice
+    .filter((price) => price.checked === "checked")
+    .map((price) => Number(price.min));
   const sizes = dataSize
     .filter((size) => size.class === "select-size")
     .map((size) => size.type);
@@ -30,38 +36,97 @@ export const filterProducts = async () => {
     .filter((oder) => oder.selected === "selected")
     .map((order) => order.name);
 
-  console.log("fui colors", colors);
-  console.log("fui prices", prices);
-  console.log("fui sizes", sizes);
-  console.log("fui order", orders);
-  console.log("aqqq", getAllProducts);
-
   const filterProducts = () => {
-    const allProduct = [];
+    const allProducts = [];
+    let typeFilter = "";
 
-    getAllProducts.filter((product) => {
-      const hasColor = colors.includes(product.color.toLowerCase());
-      const hasSize = product.size
-        .map((size) => sizes.includes(size))
-        .join()
-        .includes(true);
+    if (colors.length > 0 && pricesMax.length > 0 && sizes.length > 0) {
+      const allFilter = filterAll(
+        colors,
+        pricesMax,
+        pricesMin,
+        sizes,
+        getAllProducts
+      );
 
-      console.log("hasSize", hasSize);
+      allProducts.push(allFilter);
+    } else if (colors.length > 0 && pricesMax.length > 0) {
+      typeFilter = "colorPrice";
 
-      if (
-        hasColor &&
-        hasSize &&
-        product.price <= prices[prices.length - 1] &&
-        product.price > prices[0]
-      ) {
-        allProduct.push(product);
-      } else {
-        console.log("não entrei");
-      }
-    });
+      const filterTwoSelect = twoFiltersSelect(
+        typeFilter,
+        colors,
+        pricesMax,
+        pricesMin,
+        sizes,
+        getAllProducts
+      );
+      allProducts.push(filterTwoSelect);
+    } else if (sizes.length > 0 && colors.length > 0) {
+      typeFilter = "colorSize";
 
-    return allProduct;
+      const filterTwoSelect = twoFiltersSelect(
+        typeFilter,
+        colors,
+        pricesMax,
+        pricesMin,
+        sizes,
+        getAllProducts
+      );
+      allProducts.push(filterTwoSelect);
+    } else if (pricesMax.length > 0 && sizes.length) {
+      typeFilter = "sizePrice";
+
+      const filterTwoSelect = twoFiltersSelect(
+        typeFilter,
+        colors,
+        pricesMax,
+        pricesMin,
+        sizes,
+        getAllProducts
+      );
+      allProducts.push(filterTwoSelect);
+    } else if (colors.length) {
+      typeFilter = "color";
+
+      const filterOneSelect = oneFilterSelect(
+        typeFilter,
+        colors,
+        pricesMax,
+        pricesMin,
+        sizes,
+        getAllProducts
+      );
+      allProducts.push(filterOneSelect);
+    } else if (pricesMax.length) {
+      typeFilter = "price";
+
+      const filterOneSelect = oneFilterSelect(
+        typeFilter,
+        colors,
+        pricesMax,
+        pricesMin,
+        sizes,
+        getAllProducts
+      );
+      allProducts.push(filterOneSelect);
+    } else if (sizes.length) {
+      typeFilter = "size";
+
+      const filterOneSelect = oneFilterSelect(
+        typeFilter,
+        colors,
+        pricesMax,
+        pricesMin,
+        sizes,
+        getAllProducts
+      );
+      allProducts.push(filterOneSelect);
+    }
+
+    return allProducts[0];
   };
 
-  console.log("here", filterProducts());
+  console.log("hereeeeeee", filterProducts());
+  console.log("vim", getAllProducts);
 };
