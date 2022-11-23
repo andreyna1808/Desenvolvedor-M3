@@ -6,11 +6,6 @@ export const viewMoreColors = (boxColors, dataColor) => {
   const basicText = "Ver todas as cores v";
   let isChecked = JSON.parse(localStorage.getItem("colors")) || dataColor;
 
-  boxColors.innerHTML = ``;
-  isChecked.slice(0, 5).map((val, index) => {
-    boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
-  });
-
   textViewMore.innerHTML = basicText;
   textViewMore.addEventListener("click", () => {
     if (textViewMore.textContent === basicText) {

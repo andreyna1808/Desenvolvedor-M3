@@ -32,13 +32,18 @@ fetch(`${serverurl}/products`)
   });
 
 const App = (productsM3) => {
-  const dataColor = colorsJson;
   const dataPrice = pricesJson;
   const dataSize = sizesJson;
   const dataOder = ordersJson;
 
+  let dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
+
   productsM3.slice(0, 9).map((val, index) => {
     boxProduct.innerHTML += `${htmlProduct(val, index)}`;
+  });
+
+  dataColor.slice(0, 5).map((val, index) => {
+    boxColors.innerHTML += `${htmlColorPrice(val, index)}`;
   });
 
   dataPrice.map((val, index) => {
