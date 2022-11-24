@@ -65,6 +65,10 @@ const App = (productsM3) => {
     boxOrders.innerHTML += `${htmlSelectOrder(val, index)}`;
   });
 
+  if (productFilters.length <= 8) {
+    buttonMore.classList.add(".box-button-js");
+    buttonMore.style.display = "none";
+  }
   buttonMore.addEventListener("click", () => {
     onViewMore(boxProduct, productsM3, buttonMore);
     buyProduct();
@@ -72,6 +76,13 @@ const App = (productsM3) => {
 
   buyProduct();
 
+  if (productFilters.length <= 8) {
+    buttonMore.classList.add(".box-button-js");
+    buttonMore.style.display = "none";
+  } else {
+    buttonMore.classList.remove(".box-button-js");
+    buttonMore.style.display = "block";
+  }
   filterColorPrice(boxPrices, "prices", dataPrice, productsM3);
   filterColorPrice(boxColors, "colors", dataColor, productsM3);
 

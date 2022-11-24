@@ -2,6 +2,8 @@ import { filterProducts } from "../../../filterProducts";
 import { buyProduct } from "../../../header/buyProduct";
 import { htmlProduct } from "../../../htmls/box-products";
 
+let buttonMore = document.querySelector(".box-products .box-button button");
+
 export const selectSize = (json, productM3) => {
   let boxSizes = Array.from(
     document.querySelectorAll(".box-sizes .sizes .size")
@@ -37,9 +39,19 @@ export const selectSize = (json, productM3) => {
           dataSize
         );
         boxProduct.innerHTML = ``;
-        productFilters.map((val, index) => {
+        productFilters.slice(0, 9).map((val, index) => {
           boxProduct.innerHTML += `${htmlProduct(val, index)}`;
         });
+
+        if (productFilters.length <= 8) {
+          buttonMore.classList.add(".box-button-js");
+          buttonMore.style.display = "none";
+        } else {
+          buttonMore.classList.remove(".box-button-js");
+          buttonMore.style.display = "block";
+        }
+
+        console.log("here productFilters", productFilters);
       } else {
         json.filter((jsonData) => {
           if (jsonData.type === data.textContent) {
@@ -61,10 +73,20 @@ export const selectSize = (json, productM3) => {
           dataPrice,
           dataSize
         );
+
         boxProduct.innerHTML = ``;
         productFilters.map((val, index) => {
           boxProduct.innerHTML += `${htmlProduct(val, index)}`;
         });
+
+        if (productFilters.length <= 8) {
+          buttonMore.classList.add(".box-button-js");
+          buttonMore.style.display = "none";
+        } else {
+          buttonMore.classList.remove(".box-button-js");
+          buttonMore.style.display = "block";
+        }
+        console.log("here productFilters", productFilters);
       }
       buyProduct();
     });
