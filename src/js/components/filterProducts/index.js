@@ -11,10 +11,6 @@ export const filterProducts = (
   const allProducts = [];
   let typeFilter = "";
 
-  console.log("dataColor", dataColor);
-  console.log("dataPrice", dataPrice);
-  console.log("dataSize", dataSize);
-
   const colors = dataColor
     ?.filter((color) => color.checked === "checked")
     .map((color) => color.name.toLowerCase());

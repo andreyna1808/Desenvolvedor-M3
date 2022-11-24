@@ -1,6 +1,6 @@
 import { filterProducts } from "../components/filterProducts";
 import { htmlProduct } from "../components/htmls/box-products";
-import { hasMoreProduct } from "./buttonViewMore";
+import { hasMoreProduct } from "./hasMoreProduct";
 
 const boxProduct = document.querySelector(".box-products .products");
 

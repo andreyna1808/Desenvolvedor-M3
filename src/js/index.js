@@ -14,7 +14,7 @@ import colorsJson from "./json/colors.json";
 import pricesJson from "./json/prices.json";
 import ordersJson from "./json/selectOrder.json";
 import sizesJson from "./json/sizes.json";
-import { hasMoreProduct } from "./utils/buttonViewMore";
+import { hasMoreProduct } from "./utils/hasMoreProduct";
 
 const serverurl = process.env.SERVER_API;
 
