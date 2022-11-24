@@ -1,8 +1,7 @@
+import { hasMoreProduct } from "../../../../utils/buttonViewMore";
 import { filterProducts } from "../../../filterProducts";
 import { buyProduct } from "../../../header/buyProduct";
 import { htmlProduct } from "../../../htmls/box-products";
-
-let buttonMore = document.querySelector(".box-products .box-button button");
 
 export const selectSize = (json, productM3) => {
   let boxSizes = Array.from(
@@ -43,15 +42,7 @@ export const selectSize = (json, productM3) => {
           boxProduct.innerHTML += `${htmlProduct(val, index)}`;
         });
 
-        if (productFilters.length <= 8) {
-          buttonMore.classList.add(".box-button-js");
-          buttonMore.style.display = "none";
-        } else {
-          buttonMore.classList.remove(".box-button-js");
-          buttonMore.style.display = "block";
-        }
-
-        console.log("here productFilters", productFilters);
+        hasMoreProduct(productFilters);
       } else {
         json.filter((jsonData) => {
           if (jsonData.type === data.textContent) {
@@ -79,14 +70,7 @@ export const selectSize = (json, productM3) => {
           boxProduct.innerHTML += `${htmlProduct(val, index)}`;
         });
 
-        if (productFilters.length <= 8) {
-          buttonMore.classList.add(".box-button-js");
-          buttonMore.style.display = "none";
-        } else {
-          buttonMore.classList.remove(".box-button-js");
-          buttonMore.style.display = "block";
-        }
-        console.log("here productFilters", productFilters);
+        hasMoreProduct(productFilters);
       }
       buyProduct();
     });

@@ -13,6 +13,7 @@ import colorsJson from "./json/colors.json";
 import pricesJson from "./json/prices.json";
 import ordersJson from "./json/selectOrder.json";
 import sizesJson from "./json/sizes.json";
+import { hasMoreProduct } from "./utils/buttonViewMore";
 
 const serverurl = process.env.SERVER_API;
 
@@ -65,10 +66,7 @@ const App = (productsM3) => {
     boxOrders.innerHTML += `${htmlSelectOrder(val, index)}`;
   });
 
-  if (productFilters.length <= 8) {
-    buttonMore.classList.add(".box-button-js");
-    buttonMore.style.display = "none";
-  }
+  hasMoreProduct(productFilters);
   buttonMore.addEventListener("click", () => {
     onViewMore(boxProduct, productsM3, buttonMore);
     buyProduct();
@@ -76,13 +74,6 @@ const App = (productsM3) => {
 
   buyProduct();
 
-  if (productFilters.length <= 8) {
-    buttonMore.classList.add(".box-button-js");
-    buttonMore.style.display = "none";
-  } else {
-    buttonMore.classList.remove(".box-button-js");
-    buttonMore.style.display = "block";
-  }
   filterColorPrice(boxPrices, "prices", dataPrice, productsM3);
   filterColorPrice(boxColors, "colors", dataColor, productsM3);
 
