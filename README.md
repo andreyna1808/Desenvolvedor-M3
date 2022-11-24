@@ -1,7 +1,5 @@
 # Venha ser um desenvolvedor da Digital M3
 
-### Veja o projeto: https://deploy-mks-system.vercel.app/
-
 ### Objetivo
 
 O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porém caso deseje utilizar frameworks como react, é possivel adicionar ao setup.
