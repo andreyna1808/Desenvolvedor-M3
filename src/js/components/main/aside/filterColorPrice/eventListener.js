@@ -1,11 +1,8 @@
-import { hasMoreProduct } from "../../../../utils/buttonViewMore";
-import { filterProducts } from "../../../filterProducts";
+import { utilFilterHtml } from "../../../../utils/utilFilterHtml";
 import { buyProduct } from "../../../header/buyProduct";
-import { htmlProduct } from "../../../htmls/box-products";
 
 export const eventListColorPrice = (dom, json, type, productM3) => {
   let checked = JSON.parse(localStorage.getItem(type)) || json;
-  let boxProduct = document.querySelector(".box-products .products");
 
   dom.map((data) => {
     data.addEventListener("click", () => {
@@ -20,21 +17,7 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
         checked = json;
         localStorage.setItem(type, JSON.stringify(checked));
 
-        const dataColor = JSON.parse(localStorage.getItem("colors")) || [];
-        const dataPrice = JSON.parse(localStorage.getItem("prices")) || [];
-        const dataSize = JSON.parse(localStorage.getItem("sizes")) || [];
-
-        let productFilters = filterProducts(
-          productM3,
-          dataColor,
-          dataPrice,
-          dataSize
-        );
-        boxProduct.innerHTML = ``;
-        productFilters.map((val, index) => {
-          boxProduct.innerHTML += `${htmlProduct(val, index)}`;
-        });
-        hasMoreProduct(productFilters);
+        utilFilterHtml(productM3);
       } else {
         json.filter((data) => {
           if (data.name === isChecked || data.value === isChecked) {
@@ -45,22 +28,7 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
         checked = json;
         localStorage.setItem(type, JSON.stringify(checked));
 
-        const dataColor = JSON.parse(localStorage.getItem("colors")) || [];
-        const dataPrice = JSON.parse(localStorage.getItem("prices")) || [];
-        const dataSize = JSON.parse(localStorage.getItem("sizes")) || [];
-
-        let productFilters = filterProducts(
-          productM3,
-          dataColor,
-          dataPrice,
-          dataSize
-        );
-        boxProduct.innerHTML = ``;
-        productFilters.slice(0, 9).map((val, index) => {
-          boxProduct.innerHTML += `${htmlProduct(val, index)}`;
-        });
-
-        hasMoreProduct(productFilters);
+        utilFilterHtml(productM3);
       }
       buyProduct();
     });

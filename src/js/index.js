@@ -33,7 +33,6 @@ fetch(`${serverurl}/products`)
 const App = (productsM3) => {
   const resetOrder = localStorage.setItem("order", JSON.stringify(ordersJson));
 
-  // TODO deixar armazenado mesmo com o refresh
   const dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
   const dataPrice = JSON.parse(localStorage.getItem("prices")) || pricesJson;
   const dataSize = JSON.parse(localStorage.getItem("sizes")) || sizesJson;

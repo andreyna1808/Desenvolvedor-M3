@@ -1,7 +1,6 @@
 import { filterProducts } from "../../../filterProducts";
 import { htmlProduct } from "../../../htmls/box-products";
 
-// TODO Se tiver menos que 9 remover o botão de ver mai
 export const onViewMore = (boxProduct, productM3, buttonMore) => {
   const dataColor = JSON.parse(localStorage.getItem("colors")) || [];
   const dataPrice = JSON.parse(localStorage.getItem("prices")) || [];
@@ -13,8 +12,6 @@ export const onViewMore = (boxProduct, productM3, buttonMore) => {
     dataPrice,
     dataSize
   );
-
-  console.log("here", productFilters);
 
   if (buttonMore.textContent === "Ver mais") {
     productFilters.slice(10, productFilters.length).map((val, index) => {

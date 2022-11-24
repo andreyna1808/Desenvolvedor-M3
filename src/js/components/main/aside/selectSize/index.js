@@ -1,14 +1,10 @@
-import { hasMoreProduct } from "../../../../utils/buttonViewMore";
-import { filterProducts } from "../../../filterProducts";
+import { utilFilterHtml } from "../../../../utils/utilFilterHtml";
 import { buyProduct } from "../../../header/buyProduct";
-import { htmlProduct } from "../../../htmls/box-products";
 
 export const selectSize = (json, productM3) => {
   let boxSizes = Array.from(
     document.querySelectorAll(".box-sizes .sizes .size")
   );
-  let boxProduct = document.querySelector(".box-products .products");
-
   let checked = JSON.parse(localStorage.getItem("sizes")) || json;
 
   boxSizes.map((data) => {
@@ -27,22 +23,7 @@ export const selectSize = (json, productM3) => {
         localStorage.setItem("sizes", JSON.stringify(checked));
         data.classList.remove("select-size");
 
-        const dataColor = JSON.parse(localStorage.getItem("colors")) || [];
-        const dataPrice = JSON.parse(localStorage.getItem("prices")) || [];
-        const dataSize = JSON.parse(localStorage.getItem("sizes")) || [];
-
-        let productFilters = filterProducts(
-          productM3,
-          dataColor,
-          dataPrice,
-          dataSize
-        );
-        boxProduct.innerHTML = ``;
-        productFilters.slice(0, 9).map((val, index) => {
-          boxProduct.innerHTML += `${htmlProduct(val, index)}`;
-        });
-
-        hasMoreProduct(productFilters);
+        utilFilterHtml(productM3);
       } else {
         json.filter((jsonData) => {
           if (jsonData.type === data.textContent) {
@@ -54,23 +35,7 @@ export const selectSize = (json, productM3) => {
         localStorage.setItem("sizes", JSON.stringify(checked));
         data.classList.add("select-size");
 
-        const dataColor = JSON.parse(localStorage.getItem("colors")) || [];
-        const dataPrice = JSON.parse(localStorage.getItem("prices")) || [];
-        const dataSize = JSON.parse(localStorage.getItem("sizes")) || [];
-
-        let productFilters = filterProducts(
-          productM3,
-          dataColor,
-          dataPrice,
-          dataSize
-        );
-
-        boxProduct.innerHTML = ``;
-        productFilters.map((val, index) => {
-          boxProduct.innerHTML += `${htmlProduct(val, index)}`;
-        });
-
-        hasMoreProduct(productFilters);
+        utilFilterHtml(productM3);
       }
       buyProduct();
     });
