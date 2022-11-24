@@ -9,6 +9,7 @@ import { selectSize } from "./components/main/aside/selectSize";
 import { onViewMore } from "./components/main/products/onViewMore";
 import { sectionOrder } from "./components/sectionOrder";
 
+import dbJson from "../../db.json";
 import colorsJson from "./json/colors.json";
 import pricesJson from "./json/prices.json";
 import ordersJson from "./json/selectOrder.json";
@@ -24,13 +25,18 @@ let boxSizes = document.querySelector(".box-sizes .sizes");
 let boxOrders = document.querySelector(".box-content select");
 let buttonMore = document.querySelector(".box-products .box-button button");
 
-fetch(`${serverurl}/products`)
-  .then((response) => response.json())
-  .then((data) => {
-    App(data);
-  });
+if (serverurl) {
+  fetch(`${serverurl}/products`)
+    .then((response) => response.json())
+    .then((data) => {
+      App(data);
+    });
+} else {
+  const dataProduct = dbJson.products;
+  App(dataProduct);
+}
 
-const App = (productsM3) => {
+function App(productsM3) {
   const resetOrder = localStorage.setItem("order", JSON.stringify(ordersJson));
 
   const dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
@@ -78,4 +84,4 @@ const App = (productsM3) => {
 
   selectSize(dataSize, productsM3);
   sectionOrder(dataOder, productsM3);
-};
+}

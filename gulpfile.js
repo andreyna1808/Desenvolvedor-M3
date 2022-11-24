@@ -7,6 +7,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
+const jsonConfig = require("gulp-json-config");
 
 const webpackConfig = require("./webpack.config.js");
 
@@ -15,8 +16,12 @@ const paths = {
     src: "src/js/index.js",
     watch: "src/js/**/*.js",
   },
+  json: {
+    src: "src/js/json/*.json",
+  },
   styles: {
     src: "src/scss/main.scss",
+    watch: "src/scss/**/*.scss",
   },
   img: {
     src: "src/img/**/*",
@@ -50,6 +55,13 @@ function styles() {
       })
     )
     .pipe(sourcemaps.write())
+    .pipe(dest(paths.dest))
+    .pipe(browserSync.stream());
+}
+
+function json() {
+  return src(paths.json.src)
+    .pipe(jsonConfig())
     .pipe(dest(paths.dest))
     .pipe(browserSync.stream());
 }
@@ -92,8 +104,10 @@ const dev = () => {
     "change",
     browserSync.reload
   );
+  // watch json
   watch(paths.styles.src, { ignoreInitial: false }, styles);
   watch(paths.img.src, { ignoreInitial: false }, img);
+  watch(paths.json.src, { ignoreInitial: false }, json);
   watch(paths.html.src, { ignoreInitial: false }, html).on(
     "change",
     browserSync.reload
@@ -105,4 +119,5 @@ exports.build = build;
 exports.server = server;
 exports.styles = styles;
 exports.scripts = scripts;
+exports.json = json;
 exports.default = dev;

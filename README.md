@@ -18,7 +18,7 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 #### Bônus
 
 - [x] Javascript sem plugins e modular
-- Adição de processo no gulp para otimizar imagens
+- [x] Adição de processo no gulp para otimizar imagens
 ### Lista com as ferramentas utilizadas
 
 - HTML, CSS E JAVASCRIPT
