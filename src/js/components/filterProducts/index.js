@@ -14,8 +14,7 @@ export const filterProducts = (
   getAllProducts,
   dataColor,
   dataPrice,
-  dataSize,
-  dataOder
+  dataSize
 ) => {
   const allProducts = [];
   let typeFilter = "";
@@ -23,7 +22,6 @@ export const filterProducts = (
   console.log("dataColor", dataColor);
   console.log("dataPrice", dataPrice);
   console.log("dataSize", dataSize);
-  console.log("dataOder", dataOder);
 
   const colors = dataColor
     ?.filter((color) => color.checked === "checked")
@@ -37,9 +35,6 @@ export const filterProducts = (
   const sizes = dataSize
     ?.filter((size) => size.class === "select-size")
     .map((size) => size.type);
-  const orders = dataOder
-    ?.filter((oder) => oder.selected === "selected")
-    .map((order) => order.name);
 
   if (colors.length > 0 && pricesMax.length > 0 && sizes.length > 0) {
     const allFilter = filterAll(
@@ -127,6 +122,5 @@ export const filterProducts = (
     allProducts.push(getAllProducts);
   }
 
-  console.log("aaaaaaaaaaaaaaa", allProducts[0]);
   return allProducts[0];
 };

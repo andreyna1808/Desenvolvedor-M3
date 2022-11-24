@@ -34,8 +34,7 @@ export const selectSize = (json, productM3) => {
           productM3,
           dataColor,
           dataPrice,
-          dataSize,
-          []
+          dataSize
         );
         boxProduct.innerHTML = ``;
         productFilters.map((val, index) => {
@@ -60,8 +59,7 @@ export const selectSize = (json, productM3) => {
           productM3,
           dataColor,
           dataPrice,
-          dataSize,
-          []
+          dataSize
         );
         boxProduct.innerHTML = ``;
         productFilters.map((val, index) => {

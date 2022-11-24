@@ -69,7 +69,5 @@ const App = (productsM3) => {
   selectSize(dataSize, productsM3);
 
   //TODO order
-  sectionOrder(dataOder);
-
-  //filterProducts(productsM3);
+  sectionOrder(dataOder, productsM3);
 };

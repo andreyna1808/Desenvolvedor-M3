@@ -27,8 +27,7 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
           productM3,
           dataColor,
           dataPrice,
-          dataSize,
-          []
+          dataSize
         );
         boxProduct.innerHTML = ``;
         productFilters.map((val, index) => {
@@ -52,8 +51,7 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
           productM3,
           dataColor,
           dataPrice,
-          dataSize,
-          []
+          dataSize
         );
         boxProduct.innerHTML = ``;
         productFilters.map((val, index) => {
