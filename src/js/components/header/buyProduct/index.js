@@ -1,7 +1,7 @@
 export const buyProduct = () => {
   let buttonBuy = Array.from(document.querySelectorAll(".product div button"));
   let qtdProductsToCart = document.querySelector("header section p");
-  let removeProduct = document.querySelector("header section");
+  let removeProduct = document.querySelector(".desktop header section");
 
   const cartProducts = JSON.parse(localStorage.getItem("cart")) || [];
   qtdProductsToCart.innerHTML = cartProducts?.length || 0;
