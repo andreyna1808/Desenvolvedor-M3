@@ -1,15 +1,18 @@
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 10rem;
+  padding: 16px 10%;
   border-bottom: 2px solid #c7c7c7;
 
   section {
     display: flex;
     position: relative;
     float: right;
+    cursor: pointer;
 
     img {
+      width: 17px;
+      height: 20px;
       position: absolute;
       right: 0;
       bottom: 0.2rem;
@@ -17,19 +20,22 @@ header {
     }
 
     p {
-      width: 0.7rem;
-      display: flex;
-      justify-content: center;
+      width: 7px;
+      height: 12px;
       font-size: 10px;
       background: var(--cyan-500);
       border-radius: 50%;
-      padding: 2px 1px;
+      padding: 2px 3px;
       color: white;
       font-family: "Roboto";
       position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       right: 0;
       bottom: 0;
-      left: 1rem;
+      left: 16px;
+      padding-bottom: 1px;
     }
   }
 }

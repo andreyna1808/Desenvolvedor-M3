@@ -1,0 +1,46 @@
+.box-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+
+  h1 {
+    color: var(--gray-500);
+    font-size: 32px;
+    margin-left: 10%;
+  }
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    margin-right: 10rem;
+    padding: 10px;
+    width: 142px;
+    height: 42px;
+    cursor: pointer;
+    outline-style: none;
+
+    background-repeat: no-repeat;
+    background-size: 12px 9px;
+    background-position: right 0.25em center;
+    padding-right: 1em;
+
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvcZ8Bqt9flhKaAT1h9jiAk54k59ik4sG8SCqBUADbNGKoxBDlTFbg_0jyq4bUd66jPzc&usqp=CAU");
+
+    option {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+
+      background-color: #ffffff;
+
+      background-size: 70px;
+    }
+
+    option:hover {
+      background-color: yellow !important;
+    }
+
+  }
+}

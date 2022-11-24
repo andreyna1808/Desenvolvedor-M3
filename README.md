@@ -15,19 +15,19 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 - [x] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
 - Responsividade (Em construção)
 
-#### Bônus
+### Bônus
 
 - [x] Javascript sem plugins e modular
 - [x] Adição de processo no gulp para otimizar imagens
-### Lista com as ferramentas utilizadas
+## Lista com as ferramentas utilizadas
 
 - HTML, CSS E JAVASCRIPT
 
 [![Habilidades front-end](https://skillicons.dev/icons?i=html,css,js)](https://skillicons.dev)
 
-### Como utilizar o projeto
+## Como utilizar o projeto
 
-##### 1- Clonar o repositório
+### 1- Clonar o repositório
 
 ```bash
   git clone git@github.com:andreyna1808/Desenvolvedor-M3.git
@@ -39,15 +39,15 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
   git clone https://github.com/andreyna1808/Desenvolvedor-M3.git
 ```
 
-##### 2- Instalar as dependências e iniciar o projeto:
+### 2- Instalar as dependências e iniciar o projeto:
 
- ###### Instalar as dependências
+ #### Instalar as dependências
  
 ```bash
   npm install
 ```
 
- ###### Iniciar o projeto
+ #### Iniciar o projeto normalmente
  
 ```bash
   npm run start
@@ -55,7 +55,7 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 
 É necessário uma versão do node superior a 14 para rodar o setup pronto de back-end
 
- ###### Acessar o front-end
+ #### Acessar o front-end
 
 ```bash
   http://localhost:3000
@@ -67,7 +67,19 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
   http://localhost:5000
 ```
 
-O layout de base no [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=0%3A1)
+###### Iniciar o projeto com gulpfile
+ 
+```bash
+  npm run dev
+```
+
+ ###### Após rodar o comando acesse
+
+```bash
+  http://localhost:3000
+```
+
+## O layout de base no [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=0%3A1)
 
 ### Challenge resolve by Andreyna Carvalho 🤗
 

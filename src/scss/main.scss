@@ -1,8 +1,9 @@
 @import "reset";
 @import "header/cart.scss";
-//@import "main/aside/box-colors.scss";
-//@import "main/aside/box-sizes.scss";
-//@import "main/aside/box-prices.scss";
+@import "main/aside/box-colorPrice.scss";
+@import "main/aside/box-sizes.scss";
+@import "main/section/box-content.scss";
+@import "main/section/box-products.scss";
 
 :root {
   --black: #000000;
@@ -13,95 +14,20 @@
   --cyan-500: #00c0ee;
 }
 
-.box-colors {
-  padding-left: 10rem;
-  margin-top: 1rem;
-  width: 40%;
+main {
+  display: flex;
+  margin-left: 10%;
+}
 
-  h2 {
-    margin-bottom: 0.7rem;
-  }
 
-  li {
-    margin-top: 0.5rem;
-    font-size: 14px;
-    cursor: pointer;
 
-    input {
-      width: 16px;
-      height: 16px;
-    }
-
-    /*     input[type=checkbox]:checked+label::after {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      content: "■"; //"■";
-      width: 16px;
-      height: 16px;
-      border: 1px solid var(--gray-100);
-      color: var(--cyan-500);
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
- */
-
-    input[type=checkbox]:focus {
-      outline: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
-    input[type=checkbox] {
-      background-color: #DDD;
-      border-radius: 2px;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      width: 17px;
-      height: 17px;
-      cursor: pointer;
-      position: relative;
-      top: 5px;
-    }
-
-    input[type=checkbox]:checked {
-      background-color: #409fd6;
-      background: #409fd6 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
-    }
-  }
-
-  .box-textColors {
-    display: flex;
-    font-size: 12px;
-    position: relative;
-    color: var(--gray-300);
-    text-decoration: underline;
-    margin-top: 0.5rem;
-
-    &:hover {
-      color: var(--cyan-500);
-    }
-  }
-
-  .box-textColors {
-    display: flex;
-    font-size: 12px;
-    position: relative;
-    color: var(--gray-300);
-    text-decoration: underline;
-    margin-top: 0.5rem;
-
-    &:hover {
-      color: var(--cyan-500);
-    }
-  }
-
-  .box-moreColors {
-    display: none;
-  }
-
-  .view-colors {
-    display: block !important;
-  }
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: var(--black);
+  height: 2rem;
+  margin-top: 2rem;
 }
