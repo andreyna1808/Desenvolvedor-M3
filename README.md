@@ -79,9 +79,12 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
   http://localhost:3000
 ```
 
-## O layout de base no [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=0%3A1)
+## Email para contato: andreyna.m.carvalho@gmail.com
+
+## Layout utilizado como base [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=0%3A1)
 
 ### Challenge resolve by Andreyna Carvalho 🤗
+
 
 [<img src="https://avatars.githubusercontent.com/u/87716793?v=4" width=115><br><sub>Andreyna Carvalho</sub>](https://github.com/andreyna1808)
   
