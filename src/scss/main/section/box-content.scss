@@ -9,10 +9,15 @@
     margin-left: 10%;
   }
 
+  .filterMobile {
+    display: none;
+  }
+
   select {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    display: block;
 
     margin-right: 10rem;
     padding: 10px;
@@ -41,6 +46,37 @@
     option:hover {
       background-color: yellow !important;
     }
+  }
+}
 
+@media (max-width: 825px) {
+  .box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 12px;
+    }
+
+    select {
+      display: none;
+    }
+
+    .filterMobile {
+      display: flex;
+
+      button {
+        background: white;
+        color: var(--gray-300);
+        border: solid 1px var(--gray-300);
+        box-shadow: none;
+        height: 49px;
+        width: 170px;
+        cursor: pointer;
+        margin-top: 0.3rem;
+      }
+    }
   }
 }

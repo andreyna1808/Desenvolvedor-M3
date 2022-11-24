@@ -39,3 +39,11 @@ header {
     }
   }
 }
+
+@media (max-width: 825px) {
+  header {
+    section {
+      margin-right: 30px;
+    }
+  }
+}
