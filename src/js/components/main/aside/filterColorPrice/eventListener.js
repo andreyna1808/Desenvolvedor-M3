@@ -1,7 +1,6 @@
 import { filterProducts } from "../../../filterProducts";
+import { buyProduct } from "../../../header/buyProduct";
 import { htmlProduct } from "../../../htmls/box-products";
-
-let boxColors = document.querySelector(".box-colors .colors");
 
 export const eventListColorPrice = (dom, json, type, productM3) => {
   let checked = JSON.parse(localStorage.getItem(type)) || json;
@@ -22,12 +21,13 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
 
         const dataColor = JSON.parse(localStorage.getItem("colors")) || [];
         const dataPrice = JSON.parse(localStorage.getItem("prices")) || [];
+        const dataSize = JSON.parse(localStorage.getItem("sizes")) || [];
 
         let productFilters = filterProducts(
           productM3,
           dataColor,
           dataPrice,
-          [],
+          dataSize,
           []
         );
         boxProduct.innerHTML = ``;
@@ -46,12 +46,13 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
 
         const dataColor = JSON.parse(localStorage.getItem("colors")) || [];
         const dataPrice = JSON.parse(localStorage.getItem("prices")) || [];
+        const dataSize = JSON.parse(localStorage.getItem("sizes")) || [];
 
         let productFilters = filterProducts(
           productM3,
           dataColor,
           dataPrice,
-          [],
+          dataSize,
           []
         );
         boxProduct.innerHTML = ``;
@@ -59,6 +60,7 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
           boxProduct.innerHTML += `${htmlProduct(val, index)}`;
         });
       }
+      buyProduct();
     });
   });
 };
