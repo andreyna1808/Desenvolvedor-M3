@@ -1,5 +1,6 @@
 import { htmlProduct } from "../../../htmls/box-products";
 
+// TODO Se tiver menos que 9 remover o botão de ver mai
 export const onViewMore = (boxProduct, dataProducts, buttonMore) => {
   let arrayProducts = [];
   if (buttonMore.textContent === "Ver mais") {

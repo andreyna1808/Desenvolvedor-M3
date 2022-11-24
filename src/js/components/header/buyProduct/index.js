@@ -3,8 +3,6 @@ export const buyProduct = () => {
   let qtdProductsToCart = document.querySelector("header section p");
   let removeProduct = document.querySelector("header section");
 
-  console.log("fui comprado", buttonBuy);
-
   const cartProducts = JSON.parse(localStorage.getItem("cart")) || [];
   qtdProductsToCart.innerHTML = cartProducts?.length || 0;
 

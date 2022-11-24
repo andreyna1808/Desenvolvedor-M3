@@ -66,7 +66,7 @@ const App = (productsM3) => {
   filterColorPrice(boxPrices, "prices", dataPrice, productsM3);
   filterColorPrice(boxColors, "colors", dataColor, productsM3);
 
-  selectSize(dataSize);
+  selectSize(dataSize, productsM3);
 
   //TODO order
   sectionOrder(dataOder);
