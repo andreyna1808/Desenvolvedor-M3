@@ -1,7 +1,6 @@
-export const htmlPriceSizeColor = () => {
+export const htmlPriceSizeColor = (title, classNameUl, classNameDiv) => {
   return `<div>
-    <ul class='ul-mobile colors-mobile'>CORES <p>v</p></ul>
-    <ul class='ul-mobile sizes-mobile'>TAMANHOS <p>v</p></ul>
-    <ul class='ul-mobile prices-mobile'>FAIXA DE PREÇO <p>v</p></ul>
-  </div>`;
+            <ul class='ul-mobile ${classNameUl}'>${title}<p>v</p></ul>
+            <div class="${classNameDiv}"></div>
+          </div>`;
 };

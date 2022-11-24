@@ -1,3 +1,3 @@
 export const htmlOrderMobile = (val, index) => {
-  return `<ul key="${index}" value="${val.value} ${val.selected}">${val.name}</ul>`;
+  return `<option class="ul-mobile" key="${index}" value="${val.value} ${val.selected}">${val.name}</option>`;
 };

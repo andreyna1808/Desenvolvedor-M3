@@ -10,6 +10,7 @@ import { onViewMore } from "./components/main/products/onViewMore";
 import { sectionOrder } from "./components/sectionOrder";
 
 import dbJson from "../../db.json";
+import { optionOrder } from "./components/mobile/optionOrder";
 import colorsJson from "./json/colors.json";
 import pricesJson from "./json/prices.json";
 import ordersJson from "./json/selectOrder.json";
@@ -24,6 +25,9 @@ let boxColors = document.querySelector(".box-colors .colors");
 let boxSizes = document.querySelector(".box-sizes .sizes");
 let boxOrders = document.querySelector(".box-content select");
 let buttonMore = document.querySelector(".box-products .box-button button");
+let orderProductDOM = Array.from(
+  document.querySelectorAll(".box-content select")
+);
 
 if (serverurl) {
   fetch(`${serverurl}/products`)
@@ -83,5 +87,14 @@ function App(productsM3) {
   filterColorPrice(boxColors, "colors", dataColor, productsM3);
 
   selectSize(dataSize, productsM3);
-  sectionOrder(dataOder, productsM3);
+
+  orderProductDOM.map((data) => {
+    data.addEventListener("click", () => {
+      const selected = data.options[data.selectedIndex].text;
+      sectionOrder(dataOder, productsM3, selected);
+      buyProduct();
+    });
+  });
+
+  optionOrder(dataOder, productsM3);
 }
