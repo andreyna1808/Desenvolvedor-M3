@@ -58,6 +58,10 @@ main {
     justify-content: center;
   }
 
+  .box-button-js {
+    display: none !important;
+  }
+
   button {
     width: 11rem;
     background: var(--cyan-500);

@@ -2,7 +2,7 @@ import {
   functionDate,
   functionSortCrescent,
   functionSortDescent,
-} from "../../functions/sortNumber";
+} from "../../utils/sortNumber";
 import { buyProduct } from "../header/buyProduct";
 import { htmlProduct } from "../htmls/box-products";
 
@@ -33,7 +33,6 @@ export const sectionOrder = (dataOder, productsM3) => {
 
       if (orders[0] === "Menor preço") {
         const sortProducts = productsM3.sort(functionSortCrescent);
-        console.log("hereeee", sortProducts);
 
         boxProduct.innerHTML = ``;
         sortProducts.map((val, index) => {

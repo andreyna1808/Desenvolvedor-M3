@@ -1,3 +1,4 @@
+import { filterProducts } from "./components/filterProducts";
 import { buyProduct } from "./components/header/buyProduct";
 import { htmlColorPrice } from "./components/htmls/box-colorPrice";
 import { htmlSelectOrder } from "./components/htmls/box-content";
@@ -31,12 +32,20 @@ fetch(`${serverurl}/products`)
 const App = (productsM3) => {
   const resetOrder = localStorage.setItem("order", JSON.stringify(ordersJson));
 
+  // TODO deixar armazenado mesmo com o refresh
   const dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
   const dataPrice = JSON.parse(localStorage.getItem("prices")) || pricesJson;
   const dataSize = JSON.parse(localStorage.getItem("sizes")) || sizesJson;
   const dataOder = JSON.parse(localStorage.getItem("order")) || ordersJson;
 
-  productsM3.slice(0, 9).map((val, index) => {
+  let productFilters = filterProducts(
+    productsM3,
+    dataColor,
+    dataPrice,
+    dataSize
+  );
+
+  productFilters.slice(0, 9).map((val, index) => {
     boxProduct.innerHTML += `${htmlProduct(val, index)}`;
   });
 
