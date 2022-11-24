@@ -2,14 +2,6 @@ import { filterAll } from "./filterAll";
 import { oneFilterSelect } from "./oneFilters";
 import { twoFiltersSelect } from "./twoFilters";
 
-/* 
-  const dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
-  const dataPrice = JSON.parse(localStorage.getItem("prices")) || pricesJson;
-  const dataSize = JSON.parse(localStorage.getItem("sizes")) || sizesJson;
-  const dataOder = JSON.parse(localStorage.getItem("order")) || ordersJson;
-
-*/
-
 export const filterProducts = (
   getAllProducts,
   dataColor,
