@@ -13,7 +13,7 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 - [x] Funcionalidade: Adicionar produto ao carrinho.
 - [x] Funcionalidade: Carregar mais produtos.
 - [x] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade (Em construção)
+- [x] Responsividade (Em construção)
 
 ### Bônus
 

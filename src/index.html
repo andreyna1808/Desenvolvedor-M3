@@ -14,62 +14,83 @@
 </head>
 
 <body>
-  <header>
-    <img id="logo-m3" src="./img/logo-m3.png" alt="">
-    <section class="tooltip">
-      <span>Excluir produtos</span>
-      <img src="./img/svg/cart.svg" alt="" />
-      <p>0</p>
-    </section>
-  </header>
+  <section class="mobile-filter">
+    <header class="header-filter">
+      <section class="order">
+        <h3>ORDENAR</h3>
+        <strong>X</strong>
+      </section>
+      <section class="filter">
+        <h3>FILTRAR</h3>
+        <strong>X</strong>
+      </section>
+    </header>
 
-  <section class="box-content">
-    <h1>BLUSAS</h1>
-    <!-- TODO Fazer uma função de filtrar e ordernar quando for mobile -->
-
-    <div class="filterMobile">
-      <button>Filtrar</button>
-      <button>Ordenar</button>
+    <div class="filters-mobile"></div>
+    <div class="buttons-apply">
+      <button class="apply">APLICAR</button>
+      <button class="clean">LIMPAR</button>
     </div>
+  </section>
+  <section class="desktop">
+    <header>
+      <img id="logo-m3" src="./img/logo-m3.png" alt="">
+      <section class="tooltip">
+        <span>Excluir produtos</span>
+        <img src="./img/svg/cart.svg" alt="" />
+        <p>0</p>
+      </section>
+    </header>
 
-    <select>
-      <option value="" disabled hidden selected>Ordenar por:</option>
-    </select>
+    <section class="box-content">
+      <h1>BLUSAS</h1>
+      <!-- TODO Fazer uma função de filtrar e ordernar quando for mobile -->
+
+      <div class="filterMobile">
+        <button class="button-filter">Filtrar</button>
+        <button class="button-order">Ordenar</button>
+      </div>
+
+      <select>
+        <option value="" disabled hidden selected>Ordenar por:</option>
+      </select>
+    </section>
+
+    <main>
+      <aside>
+        <section class="box-colors">
+          <h2>CORES</h2>
+          <ul class="colors"></ul>
+
+          <div class="box-textColors">
+            <p class="textAllColors">Ver todas as cores v</p>
+          </div>
+
+        </section>
+
+        <section class="box-sizes">
+          <h2>TAMANHOS</h2>
+
+          <div class="sizes"></div>
+        </section>
+
+        <section class="box-prices">
+          <h2>FAIXA DE PREÇO</h2>
+
+          <ul class="prices"></ul>
+        </section>
+      </aside>
+
+      <section class="box-products">
+        <div class="products"></div>
+        <div class="box-button">
+          <button>Ver mais</button>
+        </div>
+      </section>
+
+    </main>
   </section>
 
-  <main>
-    <aside>
-      <section class="box-colors">
-        <h2>CORES</h2>
-        <ul class="colors"></ul>
-
-        <div class="box-textColors">
-          <p class="textAllColors">Ver todas as cores v</p>
-        </div>
-
-      </section>
-
-      <section class="box-sizes">
-        <h2>TAMANHOS</h2>
-
-        <div class="sizes"></div>
-      </section>
-
-      <section class="box-prices">
-        <h2>FAIXA DE PREÇO</h2>
-
-        <ul class="prices"></ul>
-      </section>
-    </aside>
-
-    <section class="box-products">
-      <div class="products"></div>
-      <div class="box-button">
-        <button>Ver mais</button>
-      </div>
-    </section>
-
-  </main>
 
   <footer>M3: Implantação de E-commerce VTEX</footer>
 </body>
