@@ -39,15 +39,15 @@ export const optionFilterMobile = (
     const divPrices = document.querySelector(".filters-mobile .faixa");
 
     divColors.querySelector("ul").addEventListener("click", () => {
-      createColorsPriceMobile(divColors, dataColor);
+      createColorsPriceMobile(divColors, dataColor, productsM3, "colors");
     });
 
     divSizes.querySelector("ul").addEventListener("click", () => {
-      createSize(divSizes, dataSize);
+      createSize(divSizes, dataSize, productsM3);
     });
 
     divPrices.querySelector("ul").addEventListener("click", () => {
-      createColorsPriceMobile(divPrices, dataPrice);
+      createColorsPriceMobile(divPrices, dataPrice, productsM3, "prices");
     });
   });
 };

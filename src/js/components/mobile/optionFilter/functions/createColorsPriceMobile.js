@@ -1,6 +1,23 @@
 import { htmlColorPrice } from "../../../htmls/box-colorPrice";
+import { eventListColorPrice } from "../../../main/aside/filterColorPrice/eventListener";
 
-export const createColorsPriceMobile = (divDOM, dataColorPrice) => {
+import colorsJson from "../../../../json/colors.json";
+import pricesJson from "../../../../json/prices.json";
+
+export const createColorsPriceMobile = (
+  divDOM,
+  dataColorPrice,
+  productsM3,
+  type
+) => {
+  let json = "";
+
+  if (type === "colors") {
+    json = JSON.parse(localStorage.getItem("colors")) || colorsJson;
+  } else {
+    json = JSON.parse(localStorage.getItem("prices")) || pricesJson;
+  }
+
   const createColorsPrice = divDOM.querySelector(
     ".selectFilter-mobile-colorPrice"
   );
@@ -13,4 +30,7 @@ export const createColorsPriceMobile = (divDOM, dataColorPrice) => {
       createColorsPrice.innerHTML += `${htmlColorPrice(val, index)}`;
     });
   }
+
+  const arrayLi = Array.from(createColorsPrice.querySelectorAll("li"));
+  eventListColorPrice(arrayLi, json, type, productsM3);
 };
