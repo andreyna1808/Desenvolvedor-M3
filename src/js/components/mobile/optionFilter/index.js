@@ -1,4 +1,5 @@
 import { htmlPriceSizeColor } from "../../htmls/filters-mobile/filter-priceSizeColor";
+import { applyCleanMobile } from "../functionButtons";
 import { createColorsPriceMobile } from "./functions/createColorsPriceMobile";
 import { createSize } from "./functions/createSizeMobile";
 
@@ -50,8 +51,8 @@ export const optionFilterMobile = (
       createColorsPriceMobile(divPrices, dataPrice, productsM3, "prices");
     });
 
-    const dataColor = JSON.parse(localStorage.getItem("colors"));
-    const dataPrice = JSON.parse(localStorage.getItem("prices"));
-    const dataSize = JSON.parse(localStorage.getItem("sizes"));
+    removeButtons.classList.remove("buttons-apply-removed");
+
+    applyCleanMobile(removeDesktop, mobile, productsM3);
   });
 };
