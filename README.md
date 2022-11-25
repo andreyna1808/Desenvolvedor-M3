@@ -5,7 +5,8 @@
 Avaliar seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porém caso deseje utilizar frameworks como react, é possivel adicionar ao setup.
 
 ## Projeto
-![here](https://user-images.githubusercontent.com/87716793/203891436-4ba6f4f3-b97a-456c-89b7-68ce6f168ca2.png)
+![4609feead747ae3bee15cda67a0f2f3a](https://user-images.githubusercontent.com/87716793/203891571-d45010b6-ed75-4bad-966c-478786061f1f.png)
+
 
 ## Como utilizar o projeto
 
