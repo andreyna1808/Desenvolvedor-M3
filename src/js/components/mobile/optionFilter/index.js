@@ -15,6 +15,7 @@ const boxFiltersMobile = document.querySelector(
 import colorsJson from "../../../json/colors.json";
 import pricesJson from "../../../json/prices.json";
 import sizesJson from "../../../json/sizes.json";
+import { strongX } from "../functionButtons/strongX";
 
 export const optionFilterMobile = (productsM3) => {
   filterProduct.addEventListener("click", () => {
@@ -56,5 +57,10 @@ export const optionFilterMobile = (productsM3) => {
     removeButtons.classList.remove("buttons-apply-removed");
 
     applyCleanMobile(removeDesktop, mobile, productsM3);
+
+    const xStrong = document.querySelector(".mobile-filter .filter strong");
+    xStrong.addEventListener("click", () => {
+      strongX(productsM3);
+    });
   });
 };

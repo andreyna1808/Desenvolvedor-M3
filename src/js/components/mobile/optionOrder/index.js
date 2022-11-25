@@ -1,6 +1,7 @@
 import { buyProduct } from "../../header/buyProduct";
 import { htmlOrderMobile } from "../../htmls/filters-mobile/filter-order";
 import { sectionOrder } from "../../sectionOrder";
+import { strongX } from "../functionButtons/strongX";
 
 const orderProduct = document.querySelector(".filterMobile .button-order");
 const removeDesktop = document.querySelector(".desktop");
@@ -26,6 +27,11 @@ export const optionOrderMobile = (dataOder, productsM3) => {
     let orderProductDOM = Array.from(
       document.querySelectorAll(".filters-mobile option")
     );
+
+    const xStrong = document.querySelector(".mobile-filter .order strong");
+    xStrong.addEventListener("click", () => {
+      strongX(productsM3);
+    });
 
     orderProductDOM.map((data) => {
       data.addEventListener("click", () => {
