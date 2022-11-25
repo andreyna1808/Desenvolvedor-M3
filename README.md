@@ -4,6 +4,9 @@
 
 Avaliar seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porém caso deseje utilizar frameworks como react, é possivel adicionar ao setup.
 
+## Projeto
+![here](https://user-images.githubusercontent.com/87716793/203891436-4ba6f4f3-b97a-456c-89b7-68ce6f168ca2.png)
+
 ## Como utilizar o projeto
 
 ### 1- Clonar o repositório
