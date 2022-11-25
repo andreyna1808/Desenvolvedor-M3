@@ -49,5 +49,9 @@ export const optionFilterMobile = (
     divPrices.querySelector("ul").addEventListener("click", () => {
       createColorsPriceMobile(divPrices, dataPrice, productsM3, "prices");
     });
+
+    const dataColor = JSON.parse(localStorage.getItem("colors"));
+    const dataPrice = JSON.parse(localStorage.getItem("prices"));
+    const dataSize = JSON.parse(localStorage.getItem("sizes"));
   });
 };
