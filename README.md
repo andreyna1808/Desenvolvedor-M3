@@ -2,26 +2,7 @@
 
 ### Objetivo
 
-O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porém caso deseje utilizar frameworks como react, é possivel adicionar ao setup.
-### Obrigatório
-
-- [x] HTML5 e CSS3
-- [x] Requisição a API para obter os produtos
-- [x] Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- [x] Funcionalidade: Adicionar produto ao carrinho.
-- [x] Funcionalidade: Carregar mais produtos.
-- [x] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- [x] Responsividade (Em construção)
-
-### Bônus
-
-- [x] Javascript sem plugins e modular
-- [x] Adição de processo no gulp para otimizar imagens
-## Lista com as ferramentas utilizadas
-
-- HTML, CSS E JAVASCRIPT
-
-[![Habilidades front-end](https://skillicons.dev/icons?i=html,css,js)](https://skillicons.dev)
+Avaliar seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porém caso deseje utilizar frameworks como react, é possivel adicionar ao setup.
 
 ## Como utilizar o projeto
 
@@ -77,6 +58,9 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
   http://localhost:3000
 ```
 
+- HTML, CSS E JAVASCRIPT
+
+[![Habilidades front-end](https://skillicons.dev/icons?i=html,css,js)](https://skillicons.dev)
 ## Email para contato: andreyna.m.carvalho@gmail.com
 
 ## Layout utilizado como base [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=0%3A1)
