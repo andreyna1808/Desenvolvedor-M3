@@ -6,8 +6,6 @@ export const eventListColorPrice = (dom, json, type, productM3) => {
 
   dom.map((data) => {
     data.addEventListener("click", () => {
-      console.log("entrei aqui");
-
       const isChecked = data.querySelector("input").getAttribute("value");
       if (data.querySelectorAll("input")[0].checked) {
         json.filter((data) => {

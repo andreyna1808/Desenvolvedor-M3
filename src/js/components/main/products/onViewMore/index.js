@@ -21,7 +21,6 @@ export const onViewMore = (boxProduct, productM3, buttonMore) => {
     buttonMore.classList.add("view-less");
     buttonMore.innerHTML = "Ver menos";
   } else {
-    console.log("entrei aqui algumas vezes");
     boxProduct.innerHTML = ``;
     productFilters.slice(0, 9).map((val, index) => {
       boxProduct.innerHTML += `${htmlProduct(val, index)}`;
