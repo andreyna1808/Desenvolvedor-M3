@@ -87,7 +87,10 @@ function App(productsM3) {
   filterColorPrice(boxPrices, "prices", dataPrice, productsM3);
   filterColorPrice(boxColors, "colors", dataColor, productsM3);
 
-  selectSize(dataSize, productsM3);
+  let domSize = Array.from(
+    document.querySelectorAll(".box-sizes .sizes .size")
+  );
+  selectSize(dataSize, productsM3, domSize);
 
   orderProductDOM.map((data) => {
     data.addEventListener("click", () => {

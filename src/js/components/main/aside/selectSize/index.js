@@ -1,14 +1,15 @@
 import { utilFilterHtml } from "../../../../utils/utilFilterHtml";
 import { buyProduct } from "../../../header/buyProduct";
 
-export const selectSize = (json, productM3) => {
-  let boxSizes = Array.from(
-    document.querySelectorAll(".box-sizes .sizes .size")
-  );
+export const selectSize = (json, productM3, domSize) => {
   let checked = JSON.parse(localStorage.getItem("sizes")) || json;
 
-  boxSizes.map((data) => {
+  console.log("json", json);
+  console.log("domSize", domSize);
+
+  domSize.map((data) => {
     data.addEventListener("click", () => {
+      console.log("dataaa", data);
       const isHave = checked.filter(
         (size) => data.textContent === size.type && size.class
       );
