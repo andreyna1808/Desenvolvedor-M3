@@ -1,5 +1,6 @@
 .box-colors,
-.box-prices {
+.box-prices,
+.selectFilter-mobile-colorPrice {
   margin-top: 54px;
 
   h2 {
@@ -72,4 +73,9 @@
 
 .box-prices {
   margin-top: 24px;
+}
+
+.selectFilter-mobile-colorPrice {
+  margin-left: 10px;
+  margin-top: 0;
 }

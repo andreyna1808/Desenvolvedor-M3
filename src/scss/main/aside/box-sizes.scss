@@ -1,4 +1,5 @@
-.box-sizes {
+.box-sizes,
+.selectFilter-mobile-size {
   margin-top: 24px;
   width: 30%;
 
@@ -31,4 +32,11 @@
   .size:hover {
     border: 1px solid var(--cyan-500);
   }
+}
+
+.selectFilter-mobile-size {
+  margin-top: 0;
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }

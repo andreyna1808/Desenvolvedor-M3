@@ -1,6 +1,8 @@
 import { htmlPriceSizeColor } from "../../htmls/filters-mobile/filter-priceSizeColor";
+import { createColorsPriceMobile } from "./functions/createColorsPriceMobile";
+import { createSize } from "./functions/createSizeMobile";
 
-const orderProduct = document.querySelector(".filterMobile .button-order");
+const filterProduct = document.querySelector(".filterMobile .button-filter");
 const removeDesktop = document.querySelector(".desktop");
 const mobile = document.querySelector(".mobile-filter");
 const removeOrder = document.querySelector(".mobile-filter .order");
@@ -9,32 +11,43 @@ const boxFiltersMobile = document.querySelector(
   ".mobile-filter .filters-mobile"
 );
 
-export const optionFilter = (dataOder, productsM3) => {
-  orderProduct.addEventListener("click", () => {
+export const optionFilterMobile = (
+  dataColor,
+  dataPrice,
+  dataSize,
+  productsM3
+) => {
+  filterProduct.addEventListener("click", () => {
     removeDesktop.classList.add("remove-desktop");
     mobile.classList.add("mobile-filter-active");
     removeOrder.classList.add("filter-removed");
     removeButtons.classList.add("buttons-apply-removed");
 
-    const filters = ["COLORS", "TAMANHOS", "FAIXA DE PREÇO"];
+    const filters = [
+      { type: "cores", className: "selectFilter-mobile-colorPrice" },
+      { type: "tamanhos", className: "selectFilter-mobile-size" },
+      { type: "faixa de preço", className: "selectFilter-mobile-colorPrice" },
+    ];
+
     boxFiltersMobile.innerHTML = ``;
     filters.map((val) => {
-      boxFiltersMobile.innerHTML += `${htmlPriceSizeColor(
-        val,
-        "selectFilter-mobile"
-      )}`;
+      boxFiltersMobile.innerHTML += `${htmlPriceSizeColor(val)}`;
     });
 
-    /*     boxFiltersMobile.innerHTML = ``;
-    dataOder.map((val, index) => {
-      boxFiltersMobile.innerHTML += `${htmlPriceSizeColor(val, index, 'CORES')}`;
+    const divColors = document.querySelector(".filters-mobile .cores");
+    const divSizes = document.querySelector(".filters-mobile .tamanhos");
+    const divPrices = document.querySelector(".filters-mobile .faixa");
+
+    divColors.querySelector("ul").addEventListener("click", () => {
+      createColorsPriceMobile(divColors, dataColor);
     });
-    dataOder.map((val, index) => {
-      boxFiltersMobile.innerHTML += `${htmlPriceSizeColor(val, index, 'TAMANHOS')}`;
+
+    divSizes.querySelector("ul").addEventListener("click", () => {
+      createSize(divSizes, dataSize);
     });
-    dataOder.map((val, index) => {
-      boxFiltersMobile.innerHTML += `${htmlPriceSizeColor(val, index, 'FAIXA DE PREÇO')}`;
+
+    divPrices.querySelector("ul").addEventListener("click", () => {
+      createColorsPriceMobile(divPrices, dataPrice);
     });
- */
   });
 };

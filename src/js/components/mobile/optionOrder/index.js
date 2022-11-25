@@ -5,17 +5,17 @@ import { sectionOrder } from "../../sectionOrder";
 const orderProduct = document.querySelector(".filterMobile .button-order");
 const removeDesktop = document.querySelector(".desktop");
 const mobile = document.querySelector(".mobile-filter");
-const removeOrder = document.querySelector(".mobile-filter .order");
+const removeFilter = document.querySelector(".mobile-filter .filter");
 const removeButtons = document.querySelector(".mobile-filter .buttons-apply");
 const boxOrdersMobile = document.querySelector(
   ".mobile-filter .filters-mobile"
 );
 
-export const optionOrder = (dataOder, productsM3) => {
+export const optionOrderMobile = (dataOder, productsM3) => {
   orderProduct.addEventListener("click", () => {
     removeDesktop.classList.add("remove-desktop");
     mobile.classList.add("mobile-filter-active");
-    removeOrder.classList.add("filter-removed");
+    removeFilter.classList.add("filter-removed");
     removeButtons.classList.add("buttons-apply-removed");
 
     boxOrdersMobile.innerHTML = ``;

@@ -10,7 +10,8 @@ import { onViewMore } from "./components/main/products/onViewMore";
 import { sectionOrder } from "./components/sectionOrder";
 
 import dbJson from "../../db.json";
-import { optionOrder } from "./components/mobile/optionOrder";
+import { optionFilterMobile } from "./components/mobile/optionFilter";
+import { optionOrderMobile } from "./components/mobile/optionOrder";
 import colorsJson from "./json/colors.json";
 import pricesJson from "./json/prices.json";
 import ordersJson from "./json/selectOrder.json";
@@ -96,5 +97,6 @@ function App(productsM3) {
     });
   });
 
-  optionOrder(dataOder, productsM3);
+  optionOrderMobile(dataOder, productsM3);
+  optionFilterMobile(dataColor, dataPrice, dataSize, productsM3);
 }
