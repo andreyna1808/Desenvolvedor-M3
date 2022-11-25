@@ -101,5 +101,5 @@ function App(productsM3) {
   });
 
   optionOrderMobile(dataOder, productsM3);
-  optionFilterMobile(dataColor, dataPrice, dataSize, productsM3);
+  optionFilterMobile(productsM3);
 }

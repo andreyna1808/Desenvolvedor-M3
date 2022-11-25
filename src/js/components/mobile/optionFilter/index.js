@@ -12,12 +12,11 @@ const boxFiltersMobile = document.querySelector(
   ".mobile-filter .filters-mobile"
 );
 
-export const optionFilterMobile = (
-  dataColor,
-  dataPrice,
-  dataSize,
-  productsM3
-) => {
+import colorsJson from "../../../json/colors.json";
+import pricesJson from "../../../json/prices.json";
+import sizesJson from "../../../json/sizes.json";
+
+export const optionFilterMobile = (productsM3) => {
   filterProduct.addEventListener("click", () => {
     removeDesktop.classList.add("remove-desktop");
     mobile.classList.add("mobile-filter-active");
@@ -40,14 +39,17 @@ export const optionFilterMobile = (
     const divPrices = document.querySelector(".filters-mobile .faixa");
 
     divColors.querySelector("ul").addEventListener("click", () => {
+      let dataColor = JSON.parse(localStorage.getItem("colors")) || colorsJson;
       createColorsPriceMobile(divColors, dataColor, productsM3, "colors");
     });
 
     divSizes.querySelector("ul").addEventListener("click", () => {
+      let dataSize = JSON.parse(localStorage.getItem("sizes")) || sizesJson;
       createSize(divSizes, dataSize, productsM3);
     });
 
     divPrices.querySelector("ul").addEventListener("click", () => {
+      let dataPrice = JSON.parse(localStorage.getItem("prices")) || pricesJson;
       createColorsPriceMobile(divPrices, dataPrice, productsM3, "prices");
     });
 
